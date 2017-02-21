@@ -1,0 +1,10 @@
+{%extends "mtlpublicart/base.html" %}
+{%block title %}Public Art in Montreal{% endblock %}
+{%block content %}
+{% if user.username %}
+<h1>Hello World</h1>
+{% else %}
+<p>Welcome mysterious user!
+You need to login to play the game.</p><br/>
+{% endif %}
+{% endblock %}

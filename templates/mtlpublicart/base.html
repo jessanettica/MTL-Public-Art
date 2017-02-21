@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public Art | {% block title %}{% endblock %}</title>
+<!--     <link href="{% static "mtlpublicart/style.css" %}" rel="stylesheet"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="nav">
+<a href="/montreal_public_art">Home</a> |
+{% if user.is_authenticated %}
+Hi {{ user.username }}!
+(<a href="/logout">Logout</a>)
+{% else %}
+<a href="/login/">Login</a> |
+<a href="/register/">Register</a>
+{% endif %}
+</div>
+<h1>{% block head %}{% endblock %}</h1>
+{% block content %}{% endblock %}
+<!-- <script src="{% static "mtlpublicart/mtlart.js" %}"></script> -->
+</body>
+</html>
